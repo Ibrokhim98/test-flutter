@@ -7,7 +7,7 @@ Integrate the screens below as best as you can.
 - Add a loader and error handling in case the network is slow or API is down.
 - You can use any package you might find useful and helpful.
 - Structure with a design pattern.
-- Nice to have: if you are a Swift developer, it would be a plus if you wrote part of the business logic in a Swift Package using [Platform channels](https://docs.flutter.dev/development/platform-integration/platform-channels). This Swift package would only have one method `getOrdersList() -> [Order]`. On the Dart side we would call this method via a platform channel and get the result in typed Dart (array of Orders). *If you don't have time to do this please tell us how you would to it. If you struggle to do this a clean way, please tell us about the problems you encountered.*
+- If you are a Swift developer, it would be a plus if you wrote part of the business logic in a Swift Package using [Platform channels](https://docs.flutter.dev/development/platform-integration/platform-channels). This Swift package would only have one method `getOrdersList() -> [Order]`. On the Dart side we would call this method via a platform channel and get the result in typed Dart (array of Orders). *If you don't have time to do this please tell us how you would to it. If you struggle to do this a clean way, please tell us about the problems you encountered.*
 
 ## Rules to follow
 
