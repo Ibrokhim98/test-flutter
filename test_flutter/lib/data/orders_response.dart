@@ -1,29 +1,19 @@
-import 'dart:convert';
-
+import 'package:json_annotation/json_annotation.dart';
 import 'models/order_model.dart';
 
-OrdersResponse ordersResponseFromJson(String str) =>
-    OrdersResponse.fromJson(json.decode(str));
+part 'orders_response.g.dart';
 
-String ordersResponseToJson(OrdersResponse data) => json.encode(data.toJson());
-
+@JsonSerializable()
 class OrdersResponse {
-  String object;
-  List<OrderModel> orders;
+  String? object;
+  List<OrderModel>? orders;
 
   OrdersResponse({
-    required this.object,
-    required this.orders,
+    this.object,
+    this.orders,
   });
 
-  factory OrdersResponse.fromJson(Map<String, dynamic> json) => OrdersResponse(
-        object: json["object"],
-        orders: List<OrderModel>.from(
-            json["orders"].map((x) => OrderModel.fromJson(x))),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "object": object,
-        "orders": List<dynamic>.from(orders.map((x) => x.toJson())),
-      };
+  factory OrdersResponse.fromJson(Map<String, dynamic> json) =>
+      _$OrdersResponseFromJson(json);
+  Map<String, dynamic> toJson() => _$OrdersResponseToJson(this);
 }

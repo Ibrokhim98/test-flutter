@@ -1,42 +1,30 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'item_model.dart';
 
+part 'order_model.g.dart';
+
+@JsonSerializable()
 class OrderModel {
-  String object;
-  int id;
-  String table;
-  int guests;
-  String date;
-  List<ItemModel> items;
+  String? object;
+  int? id;
+  String? table;
+  int? guests;
+  String? date;
+  List<ItemModel>? items;
 
   OrderModel({
-    required this.object,
-    required this.id,
-    required this.table,
-    required this.guests,
-    required this.date,
-    required this.items,
+    this.object,
+    this.id,
+    this.table,
+    this.guests,
+    this.date,
+    this.items,
   });
 
-  factory OrderModel.fromJson(Map<String, dynamic> json) => OrderModel(
-        object: json["object"],
-        id: json["id"],
-        table: json["table"],
-        guests: json["guests"],
-        date: json["date"],
-        items: List<ItemModel>.from(
-            json["items"].map((x) => ItemModel.fromJson(x))),
-      );
+  factory OrderModel.fromJson(Map<String, dynamic> json) =>
+      _$OrderModelFromJson(json);
+  Map<String, dynamic> toJson() => _$OrderModelToJson(this);
 
-  Map<String, dynamic> toJson() => {
-        "object": object,
-        "id": id,
-        "table": table,
-        "guests": guests,
-        "date": date,
-        "items": List<dynamic>.from(items.map((x) => x.toJson())),
-      };
-
-  int get totalPrice =>
-      items.fold(0, (previousValue, element) => previousValue + element.price);
-  String get currency => items.isEmpty ? '' : items.first.currency;
+  int? get totalPrice => items?.map((e) => e.price).reduce((a, b) => a! + b!);
+  String get currency => items == null ? '' : items?.first.currency ?? '';
 }

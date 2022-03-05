@@ -1,35 +1,26 @@
+import 'package:json_annotation/json_annotation.dart';
+part 'item_model.g.dart';
+
+@JsonSerializable()
 class ItemModel {
-  String object;
-  int id;
-  String name;
-  int price;
-  String currency;
-  String color;
+  String? object;
+  int? id;
+  String? name;
+  int? price;
+  String? currency;
+  String? color;
 
   ItemModel({
-    required this.object,
-    required this.id,
-    required this.name,
-    required this.price,
-    required this.currency,
-    required this.color,
+    this.object,
+    this.id,
+    this.name,
+    this.price,
+    this.currency,
+    this.color,
   });
 
-  factory ItemModel.fromJson(Map<String, dynamic> json) => ItemModel(
-        object: json["object"],
-        id: json["id"],
-        name: json["name"],
-        price: json["price"],
-        currency: json["currency"],
-        color: json["color"],
-      );
+  factory ItemModel.fromJson(Map<String, dynamic> json) =>
+      _$ItemModelFromJson(json);
 
-  Map<String, dynamic> toJson() => {
-        "object": object,
-        "id": id,
-        "name": name,
-        "price": price,
-        "currency": currency,
-        "color": color,
-      };
+  Map<String, dynamic> toJson() => _$ItemModelToJson(this);
 }
