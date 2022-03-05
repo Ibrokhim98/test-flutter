@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import '../data/models/order_model.dart';
+import '../../data/models/order_model.dart';
 
 abstract class OrdersState extends Equatable {
   const OrdersState();

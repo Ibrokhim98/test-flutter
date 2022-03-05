@@ -31,7 +31,7 @@ class OrderListTile extends StatelessWidget {
                   width: leftBoxSize,
                   child: Center(
                     child: Text(
-                      order.table,
+                      order.table ?? "",
                       style: const TextStyle(
                         fontSize: 24,
                         color: Colors.white,

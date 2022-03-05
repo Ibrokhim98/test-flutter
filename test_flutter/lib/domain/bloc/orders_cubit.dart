@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_flutter/data/orders_repository.dart';
+import 'package:test_flutter/domain/repository/orders_repository.dart';
 import 'orders_state.dart';
 
 class OrdersCubit extends Cubit<OrdersState> {
