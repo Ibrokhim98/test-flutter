@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
-
-import '../../data/models/order_model.dart';
+import 'package:test_flutter/data/models/order_model.dart';
 
 abstract class OrdersState extends Equatable {
   const OrdersState();
@@ -17,7 +16,7 @@ class OrdersLoadingState extends OrdersState {
 }
 
 class OrdersLoadedState extends OrdersState {
-  OrdersLoadedState(this.orders);
+  const OrdersLoadedState(this.orders);
 
   final List<OrderModel> orders;
 

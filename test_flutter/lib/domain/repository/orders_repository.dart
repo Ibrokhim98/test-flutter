@@ -1,7 +1,7 @@
 import 'dart:convert';
+import 'package:test_flutter/data/models/order_model.dart';
 import 'package:test_flutter/data/orders_response.dart';
 import 'package:http/http.dart' as http;
-import '../../data/models/order_model.dart';
 
 class OrdersRepository {
   Future<List<OrderModel>> fetchOrders() async {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../data/models/item_model.dart';
+import 'package:test_flutter/data/models/item_model.dart';
 
 class ItemListTile extends StatelessWidget {
   const ItemListTile({Key? key, required this.item}) : super(key: key);
@@ -13,7 +13,7 @@ class ItemListTile extends StatelessWidget {
     String safeColor = item.color!.replaceAll('#', '0xff');
     Color color = Color(int.parse(safeColor));
 
-    return Container(
+    return SizedBox(
       height: size,
       child: Row(
         children: [

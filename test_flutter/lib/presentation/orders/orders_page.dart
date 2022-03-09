@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test_flutter/data/models/order_model.dart';
 import 'package:test_flutter/domain/bloc/orders_cubit.dart';
 import 'package:test_flutter/domain/bloc/orders_state.dart';
-import '../../data/models/order_model.dart';
 import 'order_list_tile.dart';
 
 class OrdersPage extends StatefulWidget {

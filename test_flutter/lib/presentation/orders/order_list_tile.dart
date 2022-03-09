@@ -3,7 +3,6 @@ import 'package:test_flutter/config/asset_colors.dart';
 import 'package:test_flutter/presentation/items/items_page.dart';
 
 import '../../data/models/order_model.dart';
-import '../../data/orders_response.dart';
 
 class OrderListTile extends StatelessWidget {
   const OrderListTile({Key? key, required this.order}) : super(key: key);

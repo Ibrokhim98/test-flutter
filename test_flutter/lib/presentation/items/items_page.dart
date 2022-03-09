@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../config/asset_colors.dart';
-import '../../data/models/order_model.dart';
+import 'package:test_flutter/config/asset_colors.dart';
+import 'package:test_flutter/data/models/order_model.dart';
 import 'item_list_tile.dart';
 
 class ItemsPage extends StatelessWidget {
