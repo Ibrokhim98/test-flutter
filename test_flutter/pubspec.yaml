@@ -13,18 +13,18 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  equatable: any
+  equatable: ^2.0.3
   provider: ^6.0.2
   flutter_bloc: ^8.0.1
-  http: any
-  json_annotation: any
+  http: ^0.13.4
+  json_annotation: ^4.4.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^1.0.0
-  build_runner: any
+  build_runner: ^2.1.7
   json_serializable: ^6.0.1
 
 flutter:
