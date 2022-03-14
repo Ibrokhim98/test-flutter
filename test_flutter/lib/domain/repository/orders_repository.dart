@@ -1,19 +1,18 @@
-import 'dart:convert';
 import 'package:test_flutter/data/models/order_model.dart';
 import 'package:test_flutter/data/orders_response.dart';
-import 'package:http/http.dart' as http;
+import 'package:test_flutter/domain/networking/api_service.dart';
 
 class OrdersRepository {
   Future<List<OrderModel>> fetchOrders() async {
-    final response = await http.get(Uri.parse(
-        'https://raw.githubusercontent.com/popina/test-flutter/main/data.json'));
+    final apiService = ApiService.create();
+    final response = await apiService.getOrders();
 
-    final parsedResponse = OrdersResponse.fromJson(jsonDecode(response.body));
+    final parsedResponse = OrdersResponse.fromJson(response.body);
 
-    if (response.statusCode == 200) {
+    if (response.base.statusCode == 200) {
       return parsedResponse.orders ?? [];
     } else {
-      throw Exception('Failed to load album');
+      throw Exception('Failed to load data');
     }
   }
 }
