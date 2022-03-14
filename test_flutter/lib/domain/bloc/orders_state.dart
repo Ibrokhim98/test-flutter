@@ -25,6 +25,10 @@ class OrdersLoadedState extends OrdersState {
 }
 
 class OrdersErrorState extends OrdersState {
+  final String message;
+
+  const OrdersErrorState(this.message);
+
   @override
-  List<Object> get props => [];
+  List<Object> get props => [message];
 }

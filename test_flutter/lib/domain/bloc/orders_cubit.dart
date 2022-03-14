@@ -10,10 +10,13 @@ class OrdersCubit extends Cubit<OrdersState> {
   void getOrders() async {
     try {
       emit(OrdersLoadingState());
-      final movies = await _repository.fetchOrders();
-      emit(OrdersLoadedState(movies));
+      final result = await _repository.fetchOrders();
+      result.fold(
+        (error) => emit(OrdersErrorState(error.toString())),
+        (movies) => emit(OrdersLoadedState(movies)),
+      );
     } catch (e) {
-      emit(OrdersErrorState());
+      emit(OrdersErrorState(e.toString()));
     }
   }
 }

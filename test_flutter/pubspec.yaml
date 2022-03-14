@@ -18,7 +18,8 @@ dependencies:
   flutter_bloc: ^8.0.1
   json_annotation: ^4.4.0
   chopper: ^4.0.5
-
+  flash: ^2.0.3+2
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
