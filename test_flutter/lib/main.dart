@@ -6,14 +6,18 @@ import 'package:test_flutter/presentation/orders/orders_page.dart';
 
 void main() {
   runApp(
-    MultiProvider(
-      providers: [
-        BlocProvider<OrdersCubit>(
-          create: (_) => OrdersCubit(),
-        ),
-      ],
+    BlocProvider<OrdersCubit>(
+      create: (_) => OrdersCubit(),
       child: const MyApp(),
     ),
+    // MultiProvider(
+    //   providers: [
+    //     BlocProvider<OrdersCubit>(
+    //       create: (_) => OrdersCubit(),
+    //     ),
+    //   ],
+    //   child: const MyApp(),
+    // ),
   );
 }
 

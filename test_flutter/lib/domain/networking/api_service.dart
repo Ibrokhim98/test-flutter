@@ -1,4 +1,5 @@
 import 'package:chopper/chopper.dart';
+import 'package:test_flutter/config/app_config.dart';
 
 part 'api_service.chopper.dart';
 
@@ -6,7 +7,7 @@ part 'api_service.chopper.dart';
 abstract class ApiService extends ChopperService {
   static ApiService create() {
     final client = ChopperClient(
-      baseUrl: 'https://raw.githubusercontent.com/popina/test-flutter/',
+      baseUrl: AppConfig.baseURL,
       services: [_$ApiService()],
       converter: const JsonConverter(),
     );

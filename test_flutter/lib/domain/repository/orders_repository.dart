@@ -11,7 +11,7 @@ class OrdersRepository {
 
     final parsedResponse = OrdersResponse.fromJson(response.body);
 
-    if (response.base.statusCode == 300) {
+    if (response.base.statusCode == 200) {
       return Right(parsedResponse.orders ?? []);
     } else {
       return Left(NetworkError('Failed to load data'));
