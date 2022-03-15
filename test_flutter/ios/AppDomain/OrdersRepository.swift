@@ -8,47 +8,26 @@
 import Foundation
 
 public protocol OrdersRepository {
-	func getOrdersList(completion: @escaping (Result<[Order], Error>) -> Void)
+	func getOrdersList(completion: @escaping (Result<[Order], NetworkError>) -> Void)
 }
 
 public class DefaultOrdersRepository: OrdersRepository {
-	
-	public init() {}
+	private let apiService: RemoteAPIService
+	private let url = "https://raw.githubusercontent.com/popina/test-flutter/main/data.json"
 
-	public func getOrdersList(completion: @escaping (Result<[Order], Error>) -> Void) {
-		let orders: [Order] = [
-			Order(
-				object: "",
-				id: 1,
-				table: "2",
-				guests: 3,
-				date: "23",
-				items: [
-					Item(object: "", id: 1, name: "122", price: 21, currency: "32", color: "red")
-				]
-			),
-			Order(
-				object: "",
-				id: 1,
-				table: "2",
-				guests: 3,
-				date: "23",
-				items: [
-					Item(object: "", id: 1, name: "122", price: 21, currency: "32", color: "red")
-				]
-			),
-			Order(
-				object: "",
-				id: 1,
-				table: "2",
-				guests: 3,
-				date: "23",
-				items: [
-					Item(object: "", id: 1, name: "122", price: 21, currency: "32", color: "red")
-				]
-			),
-		]
-		
-		completion(.success(orders))
+	public init() {
+		self.apiService = DefaultRemoteAPIService()
+	}
+
+	public func getOrdersList(completion: @escaping (Result<[Order], NetworkError>) -> Void) {
+		apiService.fetchOrders(from: url) { result in
+			switch result {
+			case .success(let ordersResponse):
+				print(ordersResponse.orders)
+				completion(.success(ordersResponse.orders))
+			case .failure(let error):
+				completion(.failure(error))
+			}
+		}
 	}
 }

@@ -20,6 +20,8 @@
 		A798DE8727E0F9D900285496 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A798DE8627E0F9D900285496 /* Order.swift */; };
 		A798DE8927E0FA1500285496 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A798DE8827E0FA1500285496 /* Item.swift */; };
 		A798DE8C27E0FA7D00285496 /* OrdersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A798DE8B27E0FA7D00285496 /* OrdersRepository.swift */; };
+		A798DE8E27E123CB00285496 /* RemoteAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A798DE8D27E123CB00285496 /* RemoteAPIService.swift */; };
+		A798DE9027E1288D00285496 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A798DE8F27E1288D00285496 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		A798DE8627E0F9D900285496 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		A798DE8827E0FA1500285496 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A798DE8B27E0FA7D00285496 /* OrdersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersRepository.swift; sourceTree = "<group>"; };
+		A798DE8D27E123CB00285496 /* RemoteAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAPIService.swift; sourceTree = "<group>"; };
+		A798DE8F27E1288D00285496 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +139,10 @@
 		A76DD91227E0F79200147552 /* AppDomain */ = {
 			isa = PBXGroup;
 			children = (
-				A798DE8B27E0FA7D00285496 /* OrdersRepository.swift */,
 				A798DE8A27E0FA2D00285496 /* Models */,
+				A798DE8B27E0FA7D00285496 /* OrdersRepository.swift */,
+				A798DE8D27E123CB00285496 /* RemoteAPIService.swift */,
+				A798DE8F27E1288D00285496 /* NetworkError.swift */,
 				A76DD91327E0F79200147552 /* AppDomain.h */,
 			);
 			path = AppDomain;
@@ -310,7 +316,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A798DE8C27E0FA7D00285496 /* OrdersRepository.swift in Sources */,
+				A798DE8E27E123CB00285496 /* RemoteAPIService.swift in Sources */,
 				A798DE8727E0F9D900285496 /* Order.swift in Sources */,
+				A798DE9027E1288D00285496 /* NetworkError.swift in Sources */,
 				A798DE8927E0FA1500285496 /* Item.swift in Sources */,
 				A798DE8527E0F93D00285496 /* OrdersResponse.swift in Sources */,
 			);

@@ -4,6 +4,7 @@ import AppDomain
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
+	private let repository: OrdersRepository = DefaultOrdersRepository()
 
 	override func application(
 		_ application: UIApplication,
@@ -30,15 +31,13 @@ import AppDomain
 	}
 
 	private func getOrdersList(result: @escaping FlutterResult) {
-		let repository: OrdersRepository = DefaultOrdersRepository()
-
 		repository.getOrdersList { receivedResult in
 			switch receivedResult {
 			case .success(let orders):
 				result(orders.map({ $0.asDictionary }))
-			case .failure(_):
+			case .failure(let error):
 				result(FlutterError(code: "NetworkError",
-									message: "Failed to load data'",
+									message: error.message,
 									details: nil))
 			}
 		}
